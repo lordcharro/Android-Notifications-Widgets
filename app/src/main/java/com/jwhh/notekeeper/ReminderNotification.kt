@@ -63,7 +63,7 @@ object ReminderNotification {
                 .setSmallIcon(R.drawable.ic_stat_reminder)
                 .setContentTitle(titleText)
                 .setContentText(noteText)
-                
+                .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.abc_ic_star_black_16dp))
 
                 // All fields below this line are optional.
 
@@ -81,7 +81,10 @@ object ReminderNotification {
                 // Automatically dismiss the notification when it is touched.
                 .setAutoCancel(true)
 
-
+                .setStyle(NotificationCompat.BigTextStyle()
+                        .bigText("a lot of bla bla here ahahahah and more bla bla and more text to show in the mf of notification menu of the device")
+                        .setBigContentTitle("Big Content Title")
+                        .setSummaryText("Summary text"))
                 .addAction(R.drawable.ic_action_stat_share_24dp, "Share", shareIntent)
 
         notify(context, builder.build())
